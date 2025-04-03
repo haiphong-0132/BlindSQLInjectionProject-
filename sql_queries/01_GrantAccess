@@ -1,0 +1,6 @@
+USE master;
+CREATE LOGIN admin WITH PASSWORD = 'A123123a';
+
+USE ATBM;
+CREATE USER admin FOR LOGIN admin;
+ALTER ROLE db_owner ADD MEMBER admin;
