@@ -2,6 +2,9 @@
 ## Mô tả
 Đây là bài thuyết trình môn ATBMHTTT - PTIT, mô phỏng về Blind SQL Injection trên một website bán hàng. Thư mục gồm 2 phần: Backend sử dụng Python + SQL Server và Frontend sử dụng React.
 
+## Yêu cầu
+Cần cài đặt Nodejs, Python, Sql Server trước khi tiến hành cài đặt code.
+
 ## Cách cài đặt
 
 ### 1. Cài đặt môi trường
@@ -21,7 +24,17 @@ TRUST_SERVER_CERTIFICATE=yes
 ```
 **Lưu ý:** Cần tạo tài khoản người dùng và cấp quyền (grant access) đọc cho người dùng trong SQL Server
 
-### 2. Chạy Backend
+### 2. Cài đặt database
+
+Tạo DATABASE có tên giống như DB_NAME mà bạn đã cấu hình trong file ```.env```.
+Ví dụ:
+```sql
+CREATE DATABASE ATBM -- ATBM là tên database muốn tạo
+```
+
+Tiến hành tạo các bảng và điền các giá trị cần thiết bằng đoạn mã SQL trong thư mục [sql_queries](https://github.com/haiphong-0132/BlindSQLInjectionProject-/tree/main/sql_queries)
+
+### 3. Chạy Backend
 
 Chuyển đến thư mục **backend**:
 
@@ -54,7 +67,7 @@ Chạy file ```app.py``` để chạy backend:
 python app.py
 ```
 
-### 3. Chạy Frontend
+### 4. Chạy Frontend
 Tạo một TERMINAL MỚI!!!
 Chuyển đến thư mục **frontend**:
 ```bash
