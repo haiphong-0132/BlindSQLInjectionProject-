@@ -68,7 +68,7 @@ python app.py
 ```
 
 ### 4. Chạy Frontend
-Tạo một TERMINAL MỚI!!!
+Tạo một **TERMINAL MỚI**!!!
 Chuyển đến thư mục **frontend**:
 ```bash
 cd frontend

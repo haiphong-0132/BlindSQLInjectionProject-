@@ -19,7 +19,7 @@ export default function SearchForm({onSearch, initialQuery = '', initialCategory
     };
 
     const formatQuery = (query, category) => {
-        let sqlQuery = `SELECT * FROM products WHERE name LIKE '%${query}%' AND category = '${category}'`;
+        let sqlQuery = `SELECT COUNT(*) FROM products WHERE name LIKE '%${query}%' AND category = '${category}'`;
         const commentIndex = sqlQuery.indexOf('--');
         if (commentIndex !== -1){
             const query = sqlQuery.slice(0, commentIndex);
