@@ -102,16 +102,27 @@ def login():
 
     user = cursor.fetchone()
     conn.close()
-
+    print(user)
     if user:
-        return jsonify({
-            'success': True,
-            'user': {
-                'id': user[0],
-                'username': user[1],
-                'isAdmin': bool(user[2]),
-            }
-        })
+        if user[4] == 1:
+            return jsonify({
+                'success': True,
+                'user': {
+                    'id': user[0],
+                    'username': user[1],
+                    'isAdmin': bool(user[4]),
+                    'flag': 'Thầy Cương đẹp trai'
+                }
+            })
+        else:
+            return jsonify({
+                'success': True,
+                'user': {
+                    'id': user[0],
+                    'username': user[1],
+                    'isAdmin': bool(user[4]),
+                }
+            })
     
     else:
         return jsonify({
