@@ -1,10 +1,10 @@
-USE ATBM
+﻿USE ATBM
 
 CREATE TABLE Users (
 	id INT IDENTITY(1,1) PRIMARY KEY,
-	username VARCHAR(50) UNIQUE,
-	password VARCHAR(50),
-	email VARCHAR(100),
+	username VARCHAR(50) COLLATE Latin1_General_CS_AS UNIQUE,
+	password VARCHAR(50) COLLATE Latin1_General_CS_AS,
+	email VARCHAR(100) COLLATE Latin1_General_CS_AS,
 	isAdmin INTEGER
 );
 
@@ -18,8 +18,8 @@ INSERT INTO Users (username, password, email, isAdmin) VALUES
 
 CREATE TABLE Products (
 	id INT IDENTITY(1,1) PRIMARY KEY,
-	name NVARCHAR(100),
-	category NVARCHAR(100),
+	name NVARCHAR(100) COLLATE Latin1_General_CS_AS,
+	category NVARCHAR(100) COLLATE Latin1_General_CS_AS,
 	price DECIMAL(15, 3),
 	stock INTEGER
 );

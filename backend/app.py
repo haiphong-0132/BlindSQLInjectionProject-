@@ -26,8 +26,7 @@ def get_db_connection():
 def search():
     query = request.args.get('q', '')
     category = request.args.get('category', 'all')
-    query = query.strip().lower()
-    print(f"Query: {query}, Category: {category}")
+    query = query.strip()
     print(f"Query: {query}, Category: {category}")
     if not query:
         return jsonify({
@@ -50,7 +49,7 @@ def search():
 
         cursor.execute(sql)
         count = cursor.fetchone()[0]
-
+        print(sql)
         end_time = time.time()
         execution_time = round((end_time - start_time) * 1000, 2)
 
