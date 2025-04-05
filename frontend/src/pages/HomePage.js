@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 
+const LOCALHOST = process.env.REACT_APP_HOST
+console.log(LOCALHOST)
 export default function HomePage() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,7 +22,7 @@ export default function HomePage() {
         try {
             navigate(`/?q=${encodeURIComponent(query)}&category=${encodeURIComponent(category)}`, { replace: true });
 
-            const response = await fetch(`http://localhost:5000/api/search?q=${encodeURIComponent(query)}&category=${encodeURIComponent(category)}`);
+            const response = await fetch(`${LOCALHOST}/api/search?q=${encodeURIComponent(query)}&category=${encodeURIComponent(category)}`);
             if (!response.ok) {
                 throw new Error("Search Failed");
             }

@@ -3,6 +3,8 @@ import {Link, useNavigate} from "react-router-dom";
 import Header from "../components/Header";
 import ProductsTable from "../components/ProductsTable";
 
+const LOCALHOST = process.env.REACT_APP_HOST
+
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -11,7 +13,7 @@ export default function ProductsPage() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/products');
+                const response = await fetch(`${LOCALHOST}/api/products`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch products');
                 }
