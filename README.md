@@ -7,9 +7,10 @@ Cần cài đặt Nodejs, Python, Sql Server trước khi tiến hành cài đ�
 
 ## Cách cài đặt
 
-### 1. Cài đặt môi trường
-Tạo tệp ```.env```
-Trong thư mục **backend**, tạo một tệp tên ```.env```
+### 1. Cài đặt các biến môi trường
+#### a. Biến môi trường cho **backend**
+Tạo tệp ```.env```:
+Trong thư mục **backend**, tạo một tệp tên ```.env```.
 Cấu hình các biến môi trường vào ```.env``` (Mẫu nằm ở file [.env_example](https://github.com/haiphong-0132/BlindSQLInjectionProject-/blob/main/backend/.env_example)
 
 Cụ thể:
@@ -21,8 +22,20 @@ DB_NAME=<DATABASE_NAME>
 DB_UID=<DATABASE_USER>
 DB_PWD=<DATABASE_PASSPORT>
 TRUST_SERVER_CERTIFICATE=yes
+LOCALHOST= 172.0.0.1
 ```
 **Lưu ý:** Cần tạo tài khoản người dùng và cấp quyền (grant access) đọc cho người dùng trong SQL Server
+
+#### b. Biến môi trường cho **frontend**
+Tạo tệp ```.env```:
+Trong thư mục **frontend**, tạo một tệp tên ```.env```.
+Cấu hình các biến môi trường vào ```.env``` (Mẫu nằm ở file [.env_example](https://github.com/haiphong-0132/BlindSQLInjectionProject-/blob/main/frontend/.env_example)
+
+Cụ thể:
+```bash
+REACT_APP_HOST= <Shared_Domain>
+HOST = localhost
+```
 
 ### 2. Cài đặt database
 
