@@ -35,7 +35,7 @@ export default function LoginPage() {
                 setIsAdmin(true);
             }
 
-            if (data.user && data.user.isAdmin===0) {
+            if (data.user && data.user.isAdmin===false) {
                 setIsUser(true);
             }
 
