@@ -111,7 +111,7 @@ def login():
                     'id': user[0],
                     'username': user[1],
                     'isAdmin': bool(user[4]),
-                    'flag': 'Thầy Cương đẹp trai'
+                    'flag': os.getenv('FLAG')
                 }
             })
         else:
